@@ -57,3 +57,8 @@ p6_kit_body = {
 p7_kit_body = {
     "name": "123"
 }
+
+# Datos prueba 9
+p9_kit_body = {
+    "name": 123
+}

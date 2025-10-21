@@ -44,8 +44,8 @@ def negative_assert(name):
     assert response_kit.status_code == 400
 
 # Función de prueba negativa - Sin parámetro
-def no_parameter(name):
-    kit_body = name
+def no_parameter(kit_body):
+    kit_body = kit_body
     # Crear usuario
     response_user = sender_stand_request.post_new_user(data.user_body)
     # Comprueba si el código de estado es 201
@@ -109,7 +109,7 @@ def test_kit_body_has_numbers_in_name_get_success_response():
     positive_assert(name)
 
 # Prueba 8. Creación de un nuevo kit - Prueba negativa
-# No se pasa el parámetro
+# No se pasa el parámetro name al crear el kit
 
 def test_kit_body_parameter_is_missing_get_unsuccess_response():
     # copia el diccionario kit_body
@@ -119,3 +119,9 @@ def test_kit_body_parameter_is_missing_get_unsuccess_response():
     # Se llama la función de prueba negativa
     no_parameter(kit_body)
 
+# Prueba 9. Creación de un nuevo kit - Prueba negativa
+# No se pasa un tipo de dato distinto al aceptado para name
+
+name = data.p9_kit_body["name"]
+def test_kit_body_has_different_data_type_get_unsuccess_response():
+    negative_assert(name)
