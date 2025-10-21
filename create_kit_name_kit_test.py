@@ -85,3 +85,11 @@ def test_kit_body_has_special_characters_in_name_get_success_response():
 name = data.p6_kit_body["name"]
 def test_kit_body_has_space_in_name_get_success_response():
     positive_assert(name)
+
+# Prueba 7. Creación de un nuevo kit - Prueba positiva
+# El parámetro "name" permite números
+
+name = data.p6_kit_body["name"]
+def test_kit_body_has_numbers_in_name_get_success_response():
+    positive_assert(name)
+
