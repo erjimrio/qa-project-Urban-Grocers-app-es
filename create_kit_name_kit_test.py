@@ -27,14 +27,29 @@ def positive_assert(name):
     # Compara el valor enviado y el valor recibido como nombre del kit
     assert response_kit.json()["name"] == name
 
-# Función de prueba positiva
+# Función de prueba negativa
 def negative_assert(name):
     # Se obtiene el dato para el campo name
     kit_body = get_kit_body(name)
     # Crear usuario
     response_user = sender_stand_request.post_new_user(data.user_body)
-    # Comprueba si el código de estado es 400
-    assert response_user.status_code == 400
+    # Comprueba si el código de estado es 201
+    assert response_user.status_code == 201
+    # Comprueba que el campo authToken está en la respuesta y contiene un valor
+    assert response_user.json()["authToken"] != ""
+    auth_token = response_user.json().get("authToken")
+    # Crea el kit para el usuario
+    response_kit = sender_stand_request.post_new_kit(auth_token, kit_body)
+    # Valida el status_code = 400
+    assert response_kit.status_code == 400
+
+# Función de prueba negativa - Sin parámetro
+def no_parameter(name):
+    kit_body = name
+    # Crear usuario
+    response_user = sender_stand_request.post_new_user(data.user_body)
+    # Comprueba si el código de estado es 201
+    assert response_user.status_code == 201
     # Comprueba que el campo authToken está en la respuesta y contiene un valor
     assert response_user.json()["authToken"] != ""
     auth_token = response_user.json().get("authToken")
@@ -89,7 +104,18 @@ def test_kit_body_has_space_in_name_get_success_response():
 # Prueba 7. Creación de un nuevo kit - Prueba positiva
 # El parámetro "name" permite números
 
-name = data.p6_kit_body["name"]
+name = data.p7_kit_body["name"]
 def test_kit_body_has_numbers_in_name_get_success_response():
     positive_assert(name)
+
+# Prueba 8. Creación de un nuevo kit - Prueba negativa
+# No se pasa el parámetro
+
+def test_kit_body_parameter_is_missing_get_unsuccess_response():
+    # copia el diccionario kit_body
+    kit_body = data.kit_body.copy()
+    # Borra la clave name del diccionario
+    kit_body.pop("name")
+    # Se llama la función de prueba negativa
+    no_parameter(kit_body)
 
