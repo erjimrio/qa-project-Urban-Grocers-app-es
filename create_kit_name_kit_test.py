@@ -29,7 +29,14 @@ def positive_assert(name):
 
 # Prueba 1. Creación de un nuevo kit
 # El parámetro "name" contiene un caracter
-
+name = data.p1_kit_body["name"]
 def test_create_user_1_letter_in_name_get_success_response():
-    positive_assert("a")
+    positive_assert(name)
+
+# Prueba 2. Creación de un nuevo kit
+# El parámetro "name" contiene 511 caracteres
+
+name = data.p2_kit_body["name"]
+def test_create_user_511_letter_in_name_get_success_response():
+    positive_assert(name)
 
