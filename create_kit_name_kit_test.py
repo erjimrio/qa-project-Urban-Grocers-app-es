@@ -48,35 +48,40 @@ def negative_assert(name):
 # Prueba 1. Creación de un nuevo kit - Prueba Positiva
 # El parámetro "name" contiene un caracter, límite inferior
 name = data.p1_kit_body["name"]
-def test_kit_name_1_letter_in_name_get_success_response():
+def test_kit_body_has_1_letter_in_name_get_success_response():
     positive_assert(name)
 
 # Prueba 2. Creación de un nuevo kit - Prueba positiva
 # El parámetro "name" contiene 511 caracteres, límite superior
 
 name = data.p2_kit_body["name"]
-def test_kit_name_511_letter_in_name_get_success_response():
+def test_kit_body_has_511_letters_in_name_get_success_response():
     positive_assert(name)
 
 # Prueba 3. Creación de un nuevo kit - Prueba negativa
 # El parámetro "name" no contiene caracteres, por debajo del límite inferior
 
 name = data.p3_kit_body["name"]
-def test_kit_name_none_letter_in_name_get_unsuccess_response():
+def test_kit_body_has_none_letter_in_name_get_unsuccess_response():
     negative_assert(name)
 
 # Prueba 4. Creación de un nuevo kit - Prueba negativa
 # El parámetro "name" contiene 512 caracteres por encima del límite superior
 
 name = data.p4_kit_body["name"]
-def test_kit_name_512_letter_in_name_get_unsuccess_response():
+def test_kit_body_has_512_letters_in_name_get_unsuccess_response():
     negative_assert(name)
 
 # Prueba 5. Creación de un nuevo kit - Prueba positiva
 # El parámetro "name" contiene caracteres especiales
 
 name = data.p5_kit_body["name"]
-def test_kit_name_special_characters_in_name_get_success_response():
+def test_kit_body_has_special_characters_in_name_get_success_response():
     positive_assert(name)
 
+# Prueba 6. Creación de un nuevo kit - Prueba positiva
+# El parámetro "name" permite espacios
 
+name = data.p6_kit_body["name"]
+def test_kit_body_has_space_in_name_get_success_response():
+    positive_assert(name)

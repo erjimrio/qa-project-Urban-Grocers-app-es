@@ -48,3 +48,7 @@ p5_kit_body = {
     "name": "\"№%@\","
 }
 
+# Datos prueba 6
+p6_kit_body = {
+    "name": " A Aaa "
+}
