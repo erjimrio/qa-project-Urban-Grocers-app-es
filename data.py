@@ -1,3 +1,4 @@
+# Datos para crear usuario nuevo
 headers = {
     "Content-Type": "application/json"
 }
@@ -8,3 +9,7 @@ user_body = {
     "address": "123 Elm Street, Hilltop"
 }
 
+# Datos para crear kit
+kit_body = {
+    "name": "Mi Kit Personal"
+}
