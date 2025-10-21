@@ -14,6 +14,7 @@ kit_body = {
     "name": "Mi Kit Personal"
 }
 
+# ---------- Datos para la validación ----------
 
 # Datos prueba 1
 
@@ -33,3 +34,17 @@ p2_kit_body = {
 p3_kit_body = {
     "name": ""
 }
+
+# Datos prueba 4
+p4_kit_body = {
+    "name": (
+    "Abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd"
+    "AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcD"
+    )
+}
+
+# Datos prueba 5
+p5_kit_body = {
+    "name": "\"№%@\","
+}
+
